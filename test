@@ -96,7 +96,7 @@ __request = hookfunction(reqfunc, newcclosure(function(req)
     end;
 
     if not options.ShowResponse then
-        printf("%s.request(%s)\n\n", libtype, Serializer.Serialize(RequestData));
+        printf("%s.request(%s)", libtype, Serializer.Serialize(RequestData));
         return __request(req);
     end;
 
