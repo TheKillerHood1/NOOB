@@ -13,7 +13,7 @@ if options.SaveLogs then
 end;
 
 local Serializer = loadstring(game:HttpGet("https://raw.githubusercontent.com/NotDSF/leopard/main/rbx/leopard-syn.lua"))();
-local clonef = clonefunction;
+local clonef = _G.clone;
 local pconsole = clonef(rconsoleprint);
 local format = clonef(string.format);
 local gsub = clonef(string.gsub);
@@ -81,7 +81,7 @@ __namecall = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
     local method = getnamecallmethod();
 
     if methods[method] then
-        printf("game:%s(%s)\n\n", method, Serializer.FormatArguments(...));
+        printf("game:%s(%s)", method, Serializer.FormatArguments(...));
     end;
 
     return __namecall(self, ...);
